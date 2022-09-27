@@ -1,3 +1,7 @@
+/*
+This is our main server file which runs the express application
+and connects to the mongoDB database using mongoose
+*/
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");

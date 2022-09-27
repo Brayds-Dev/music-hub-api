@@ -1,9 +1,13 @@
+/*
+This is the controller file for the user model
+It will handle all of the functions relating to the user model
+*/
 require("dotenv").config();
 const User = require('../model/user');
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
-// register logic
+// Function to handle the creation of a new user
 const registerUser = async (req, res) => {
     try {
         const {email, password} = req.body;
@@ -36,7 +40,7 @@ const registerUser = async (req, res) => {
     }
 };
 
-// login logic
+// Function to login user and provide a new JWT for authentication
 const logInUser = async (req, res) => {
     try {
         const {email, password} = req.body;

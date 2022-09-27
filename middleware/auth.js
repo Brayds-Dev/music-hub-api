@@ -1,7 +1,13 @@
+/*
+This file contains all logic for verifying a JWT
+This exported function will be used as a parameter in
+each http request route
+*/
 const jwt = require("jsonwebtoken");
 
 const config = process.env;
 
+// Function to verify JWT passed into header by client
 const verifyToken = (req, res, next) => {
     const token = req.headers["x-access-token"];
     if(!token){
