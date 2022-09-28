@@ -1,0 +1,126 @@
+/ :artist/:name
+    /get
+        description: get details of a specific artist
+        queryParameters:
+            name:
+                displayName: name
+                type: string
+                required: true
+            members:
+                displayName: members
+                type: array
+                required: true
+        headers: JWT token
+        responses: arist details
+            status: 200
+    /patch
+        description: update a specific artist
+        queryParameters:
+            name:
+                displayName: name
+                type: string
+                required: true
+            members:
+                displayName: members
+                type: array
+                required: true
+        headers: JWT token
+        responses: new arist details
+            status: 200
+    /delete
+        description: delete a specific artist
+        queryParameters:
+            name:
+                displayName: name
+                type: string
+                required: true
+            members:
+                displayName: members
+                type: array
+                required: true
+        headers: JWT token
+        responses: arist deleted
+            status: 200
+
+
+/ :album/:title
+    /get
+        description: get details of a specific album
+        queryParameters:
+            title:
+                displayName: title
+                type: string
+                required: true
+            artist:
+                displayName: artist
+                type: string
+                required: true
+            released:
+                displayName: released
+                type: number
+                required: true
+            songs:
+                displayName: songs
+                type: Array
+        headers: JWT token 
+        responses: album details
+            status: 200
+    
+/ :song/:name
+    /get
+        description: get details of a specific song
+        queryParameters:
+            name:
+                displayName: name
+                type: string
+                required: true
+            artist:
+                displayName: artist
+                type: string
+                required: true
+            duration:
+                displayName: duration
+                type: string
+                required: true
+        headers: JWT token
+        responses: song details
+            status: 200
+
+/ :artist
+    /get
+        description: get details of all the artist
+        queryParameters:
+            name:
+                displayName: name
+                type: string
+                required: true
+            members:
+                displayName: members
+                type: array
+                required: true
+        headers: JWT token
+        responses: arist details
+            status: 200
+
+/ :album
+    /get
+        description: get details of all the albums
+        queryParameters:
+            title:
+                displayName: title
+                type: string
+                required: true
+            artist:
+                displayName: artist
+                type: string
+                required: true
+            released:
+                displayName: released
+                type: number
+                required: true
+            songs:
+                displayName: songs
+                type: Array
+        headers: JWT token
+        responses: album details
+            status: 200
